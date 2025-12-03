@@ -7,15 +7,15 @@
 
 | Column | Type | Description |
 |-------|------|-----------|
-| id | integer | Identificador único (PK) |
-| listing_url | int | URL da listagem |
-| name | string | Nome da listagem |
-| room_type | string | Tipo de quarto |
-| minimum_nights | integer | Número mínimo de noites |
-| host_id | integer | ID do anfitrião (FK → hosts) |
-| price | string | Preço |
-| created_at | timestamp | Data de criação |
-| updated_at | timestamp | Data de atualização |
+| id | integer | Unique Identifier (PK) |
+| listing_url | int | Listing URL |
+| name | string | Listagem name |
+| room_type | string | Room Type |
+| minimum_nights | integer | Minimum Nights number |
+| host_id | integer | Host ID (FK → hosts) |
+| price | string | Price |
+| created_at | timestamp | Creation date |
+| updated_at | timestamp | Update date |
 
 ---
 
@@ -24,11 +24,11 @@
 
 | Column | Type | Description |
 |-------|------|-----------|
-| listing_id | integer | ID da listagem (FK → listings) |
-| date | datetime | Data da avaliação |
-| reviewer_name | string | Nome do avaliador |
-| comments | string | Comentários |
-| sentiment | string | Sentimento da avaliação |
+| listing_id | integer | Listing ID (FK → listings) |
+| date | datetime | Review date |
+| reviewer_name | string | Reviewer Name |
+| comments | string | Comments |
+| sentiment | string | Review Sentiment |
 
 ---
 
@@ -37,11 +37,11 @@
 
 | Column | Type | Description |
 |-------|------|-----------|
-| id | integer | Identificador único (PK) |
-| name | integer | Nome do anfitrião |
-| host_is_superhost | integer | Indica se é superhost |
-| created_at | timestamp | Data de criação |
-| updated_at | timestamp | Data de atualização |
+| id | integer | Unique Identifier  (PK) |
+| name | integer | Host Name |
+| host_is_superhost | string | Is superhost or not |
+| created_at | timestamp | Creation date |
+| updated_at | timestamp | Update date |
 
 ---
 
@@ -53,7 +53,7 @@
 
 ---
 
-## Relacionamentos
+## Relationships
 
 ```mermaid
 erDiagram
@@ -61,46 +61,46 @@ erDiagram
     listings ||--o{ reviews : "1:N - Uma listagem pode ter várias reviews"
 
     hosts {
-        integer id PK "Identificador único"
-        integer name "Nome do anfitrião"
-        integer host_is_superhost "0=Não, 1=Sim"
-        timestamp created_at "Data de criação"
-        timestamp updated_at "Data de atualização"
+        integer id PK "Unique Identifier"
+        integer name "Host Name"
+        integer host_is_superhost "0=No, 1=Yes"
+        timestamp created_at "Creation date"
+        timestamp updated_at "Update date"
     }
 
     listings {
-        integer id PK "Identificador único"
-        int listing_url "URL da listagem"
-        string name "Nome da listagem"
-        string room_type "Tipo de quarto"
-        integer minimum_nights "Mínimo de noites"
-        integer host_id FK "Referência ao host"
-        string price "Preço"
-        timestamp created_at "Data de criação"
-        timestamp updated_at "Data de atualização"
+        integer id PK "Unique Identifier"
+        int listing_url "Listing URL"
+        string name "Listagem name"
+        string room_type "Room Type"
+        integer minimum_nights "Minimum Nights number"
+        integer host_id FK "Host ID"
+        string price "Price"
+        timestamp created_at "Creation date"
+        timestamp updated_at "Update date"
     }
 
     reviews {
-        integer listing_id FK "Referência à listagem"
-        datetime date "Data da avaliação"
-        string reviewer_name "Nome do avaliador"
-        string comments "Comentários"
-        string sentiment "Sentimento da review"
+        integer listing_id FK "Listing ID"
+        datetime date "Review date"
+        string reviewer_name "Reviewer Name"
+        string comments "Comments"
+        string sentiment "Review Sentiment"
     }
 
     full_moon_dates {
-        datetime full_moon_date "Data da lua cheia"
+        datetime full_moon_date "Full Moon Date"
     }
 ```
 
-### Descrição dos Relacionamentos:
+### Relationships descriptions:
 
-1. **hosts → listings**: Um anfitrião pode ter várias listagens (1:N)
-   - Chave estrangeira: `listings.host_id` referencia `hosts.id`
+1. **hosts → listings**: A host can have multiple listings (1:N)
+   - Foreign key: `listings.host_id` references `hosts.id`
 
-2. **listings → reviews**: Uma listagem pode ter várias avaliações (1:N)
-   - Chave estrangeira: `reviews.listing_id` referencia `listings.id`
+2. **listings → reviews**: A listing can have multiple reviews (1:N)
+   - Foreign key: `reviews.listing_id` references `listings.id`
 
-3. **full_moon_dates**: Tabela independente sem relacionamentos diretos
+3. **full_moon_dates**: Independent table with no direct relationships
 
 ---
