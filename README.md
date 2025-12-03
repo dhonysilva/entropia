@@ -8,8 +8,8 @@
 | Column | Type | Description |
 |-------|------|-----------|
 | id | integer | Unique Identifier (PK) |
-| listing_url | int | Listing URL |
-| name | string | Listagem name |
+| listing_url | string | Listing URL |
+| name | string | Listing name |
 | room_type | string | Room Type |
 | minimum_nights | integer | Minimum Nights number |
 | host_id | integer | Host ID (FK → hosts) |
@@ -38,7 +38,7 @@
 | Column | Type | Description |
 |-------|------|-----------|
 | id | integer | Unique Identifier  (PK) |
-| name | integer | Host Name |
+| name | string | Host Name |
 | host_is_superhost | string | Is superhost or not |
 | created_at | timestamp | Creation date |
 | updated_at | timestamp | Update date |
@@ -62,7 +62,7 @@ erDiagram
 
     hosts {
         integer id PK "Unique Identifier"
-        integer name "Host Name"
+        string name "Host Name"
         integer host_is_superhost "0=No, 1=Yes"
         timestamp created_at "Creation date"
         timestamp updated_at "Update date"
@@ -70,8 +70,8 @@ erDiagram
 
     listings {
         integer id PK "Unique Identifier"
-        int listing_url "Listing URL"
-        string name "Listagem name"
+        string listing_url "Listing URL"
+        string name "Listing Name"
         string room_type "Room Type"
         integer minimum_nights "Minimum Nights number"
         integer host_id FK "Host ID"
