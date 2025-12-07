@@ -23,6 +23,10 @@ models:
                     "Shared room",
                     "Hotel room",
                   ]
+      - name: minimum_nights
+        data_tests:
+          - positive_values
+
   - name: dim_hosts_cleansed
     config:
       contract:
