@@ -1,4 +1,53 @@
-# Data Modeling - Airbnb Listings and Reviews
+# Entropia - Airbnb Listings and Reviews
+
+Project created during the [The Complete dbt (Data Build Tool) Bootcamp: Zero to Hero](https://www.udemy.com/course/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/), by [Zoltan C. Toth](https://www.linkedin.com/in/zoltanctoth/).
+
+This repository is the result of my learnings while following every training step.
+
+The Entropia Project is compound of two main folders:
+
+* `airbnb` - The dbt project.
+* `dagster_entropia` - The Dagster application.
+
+### Running up the applications
+
+Instructions for the `venv`.
+
+dbt project
+
+```text
+cd entropia/airbnb/
+```
+
+```shell
+$entropia/airbnb %
+```
+
+Dagster application
+
+```text
+cd entropia/dagster_entropia/
+```
+
+```shell
+$entropia/dagster_entropia % dagster dev
+```
+
+It will open the localhost Dagster application on port 3000.
+
+http://127.0.0.1:3000
+
+
+## Roadmap
+
+### Phase 1
+- [ ] Separate the dev, stage and prod environments.
+- [ ] Utilize the GitHub Actions to deploy from the dev into stage and prod environments.
+- [ ] Deploy the entropia project to a Cloud Provider. It means the dbt project and the Dagster application. It might be Google Cloud Platform or AWS.
+- [ ] Establish the routine to run the dbt materializations and tests through the Dagster application.
+
+While doing these steps, take notes of all learnings related to dbt, Dagster, Snowflake, GitHub Actions and the chosen Cloud provider.
+
 
 ## Tables and Relationships
 
