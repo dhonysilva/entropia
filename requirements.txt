@@ -1,0 +1,5 @@
+dbt-snowflake==1.10.3
+
+# Dagster and the Dagster dbt integration
+dagster-dbt~=0.27.0
+dagster-webserver~=1.11.0
