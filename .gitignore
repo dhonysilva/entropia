@@ -1,2 +1,14 @@
 entropia/
 logs/
+
+# Dagster
+.tmp_dagster_home*/
+dagster_home/
+.dagster/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
