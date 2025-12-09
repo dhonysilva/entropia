@@ -2,7 +2,7 @@
 
 Project created during the [The Complete dbt (Data Build Tool) Bootcamp: Zero to Hero](https://www.udemy.com/course/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/), by [Zoltan C. Toth](https://www.linkedin.com/in/zoltanctoth/).
 
-This repository is the result of my learnings while follwing every training step.
+This repository is the result of my learnings while following every training step.
 
 The Entropia Project is compound of two main folders:
 
@@ -16,7 +16,7 @@ Instructions for the `venv`.
 dbt project
 
 ```text
-cd entropia/airnb/
+cd entropia/airbnb/
 ```
 
 ```shell
