@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="dagster_entropia",
-    version="0.0.1",
+    version="0.1.0",
     packages=find_packages(),
     package_data={
         "dagster_entropia": [
@@ -14,9 +14,7 @@ setup(
         "dagster-cloud",
         "dagster-dbt",
         "dbt-core<1.11",
-        "dbt-snowflake<1.11",
-        "dbt-snowflake<1.11",
-        "dbt-snowflake<1.11",
+        "dbt-snowflake<1.11"
     ],
     extras_require={
         "dev": [
